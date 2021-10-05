@@ -48,9 +48,12 @@ body.dark-theme {
 
   --txt-search: #fff;
   --txt-search-placeholder: #fff;
+  --txt-small: #9ba1ad;
 
   --bg: #141d2f;
   --bg-secondary: #1e2a47;
+
+  --box-shadow: 220deg 30% 8%;
 
   --theme-switch-btn-hover: #90a4d4;
 
@@ -135,19 +138,27 @@ small i.fas {
   padding: 16px 20px 16px 40px;
   background-color: var(--bg-secondary);
   border-radius: 12px;
-  border: 0;
+  border: none;
   color: var(--txt-white);
   font-size: 1rem;
+  box-shadow: 0 4px 8px hsl(var(--box-shadow));
+  transition: outline 500ms ease-in;
+  margin: 0 1rem;
 }
 
 .user-form input::placeholder{
   color:hsl(var(--txt-white) / 0.95);
 }
 
+.user-form input:focus-visible, .user-form input:focus{
+  outline: 2px solid var(--primary);
+}
+
 
 .user-form button{
+  margin-right: 10px;
   padding: 10px 20px;
-  height: 3.2rem;
+  height: 3rem;
   background-color: var(--primary);
   outline: 0;
   border: 0;
@@ -155,8 +166,67 @@ small i.fas {
   color: var(--txt-white);
   font-size: 1.2rem;
   cursor: pointer;
+  box-shadow: 0 4px 8px hsl(var(--box-shadow)), 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .user-form button:hover{
   background-color: var(--primary-hover);
+}
+
+
+/* Card */
+
+
+ .card{
+
+  max-width: 80rem;
+  background-color: var(--bg-secondary);
+  margin-top: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px hsl(var(--box-shadow)), 0 15px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: 0 1rem;
+}
+
+.card-header{
+  display: flex;
+}
+
+.avatar{
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  height: 150px;
+  width: 150px;
+}
+
+.user-info{
+  color: var(--txt-white);
+  margin-left: 2rem;
+}
+
+.user-info h2{
+  margin-top: 0;
+}
+
+.user-following {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-followers{
+  margin: 1rem 0;
+  background-color: var(--bg);
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+}
+
+.user-followers * {
+  font-family: var(--font-search);
 }
