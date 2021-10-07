@@ -100,6 +100,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 15px 0px 15px;
 }
 
 header h1{
@@ -118,14 +119,14 @@ small i.fas {
 
 .user-form{
   width: 100%;
-  max-width: 50rem;
+  max-width: 49rem;
   display: flex;
   align-items: center;
   margin: 1.5rem;
   gap: 8px;
   background-color: var(--bg-secondary);
   box-shadow: 0 4px 8px hsl(var(--box-shadow));
-  padding: 8px 0px;
+  padding: 8px 15px;
   border-radius: 12px;
 } 
 
@@ -136,6 +137,7 @@ small i.fas {
 }
 
 .user-form input{
+  max-width: 49rem;
   width: 100%;
   display: block;
   background-color: var(--bg-secondary);
@@ -296,4 +298,44 @@ small i.fas {
 
 .row > div, .row-2 > div {
   margin-bottom: 10px;
+}
+
+.repo {
+  text-decoration: none;
+  color: hsl(var(--txt-white));
+  background-color: var(--bg);
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px){
+  header{
+    max-width: 400px;
+  }
+  .user-form{
+    max-width: 400px;
+  }
+  .card{
+    padding: 1rem;
+  }
+  .card-main{
+    align-items: center;
+  }
+  .card-main{
+    flex-direction: column;
+  }
+
+  .row{
+    width: 50%;
+  }
+  .row-2{
+    margin-left: 8px;
+    width: 50%;
+  }
 }
