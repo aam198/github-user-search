@@ -242,27 +242,58 @@ small i.fas {
   padding: 20px 0px;
 }
 
+/* Repo & Followers */
 
 .user-followers{
   color: var(--txt-white);
   margin: 1rem 0;
   background-color: var(--bg);
   height: 5rem;
-  padding: 1rem;
+  padding: 0.5rem 2.5rem;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   max-width: 800px;
+  font-size: 1.2rem;
 }
 
-.user-followers * {
+.user-followers small{
   font-family: var(--font-search);
+  font-size: 0.8rem;
+  color: hsl(var(--txt-white) / 0.7);
+  text-transform: none;
 }
+
+
+
+/* Location & Work Area  */
 
 .user-info-extra{
   display: flex;
-
   justify-content: space-between;
   align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+}
+
+.user-info-extra i{
+  font-size: 16px;
+  margin-right: 12px;
+}
+
+.user-info-extra .row, .user-info-extra .row-2{
+  margin-bottom: 10px;
+}
+
+.row{
+  width: 60%;
+}
+.row-2{
+  width: 40%;
+}
+
+.row > div, .row-2 > div {
+  margin-bottom: 10px;
 }
