@@ -23,10 +23,12 @@
    --txt-mid-contrast: #4b6a9b;
    --txt-low-contrast: #697c9a;
 
-   --txt-white: 0deg 0% 100%;
+   --txt-button: 0deg 0% 100%;
+   --txt-white:#2b3442;
    --txt-search: #222731;
    --txt-search-placeholder: #4b6a9b;
-   
+
+   --box-shadow: 0deg 0% 85%;
  
    --bg: #f6f8ff;
    --bg-secondary: #fefefe;
@@ -48,6 +50,7 @@ body.dark {
   --primary-hover: #60abff;
 
   --txt-white: 0deg 0% 100%;
+  --txt-button: 0deg 0% 100%;
 
   --txt-gray: hsl(var(--txt-white) / 0.55);
 
@@ -130,7 +133,7 @@ small i.fas {
   margin: 1.5rem;
   gap: 8px;
   background-color: var(--bg-secondary);
-  box-shadow: 0 4px 8px hsl(var(--box-shadow));
+  box-shadow: 0 2px 4px hsl(var(--box-shadow));
   padding: 8px 15px;
   border-radius: 12px;
 } 
@@ -154,7 +157,7 @@ small i.fas {
 }
 
 .user-form input::placeholder{
-  color:#fff;
+  color:hsl(var(--txt-white));
   font-family: var(--font-search);
   opacity: 0.8;
 }
@@ -171,7 +174,7 @@ small i.fas {
   padding: 10px 20px;
   height: 2.7rem;
   background-color: var(--primary);
-  color: hsl(var(--txt-white));
+  color: hsl(var(--txt-button));
   outline: 0;
   border: 0;
   border-radius: 12px;
