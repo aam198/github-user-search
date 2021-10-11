@@ -16,6 +16,7 @@
    /* Light mode */
    --primary: #0079ff;
    --primary-hover: #60abff;
+   --primary-hsl: 212deg 100% 50%;
  
    --font-main: 'Open Sans', sans-serif;
    --font-search: 'Space Mono', monospace;
@@ -32,7 +33,8 @@
  
    --bg: #f6f8ff;
    --bg-secondary: #fefefe;
- 
+
+   --theme-switch-btn: #778096;
    --theme-switch-btn-hover: #222731;
  
    /* Neutral */
@@ -59,6 +61,7 @@ body.dark {
 
   --box-shadow: 220deg 30% 8%;
 
+  --theme-switch-btn: #ffffff;
   --theme-switch-btn-hover: #90a4d4;
 
   /* Neutral */
@@ -123,7 +126,14 @@ small{
 small i.fas {
   margin-left: 0.5rem;
   font-size: 0.9rem;
+  color: var(--theme-switch-btn);
+  cursor:pointer;
 }
+
+small i.fas:hover{
+  color: var(--theme-switch-btn-hover);
+}
+
 
 .user-form{
   width: 100%;
@@ -152,6 +162,7 @@ small i.fas {
   border: none;
   color: hsl(var(--txt-white));
   font-size: 1rem;
+  font-family: var(--font-search);
   transition: outline 500ms ease-in;
   padding: 10px 0px;
 }
