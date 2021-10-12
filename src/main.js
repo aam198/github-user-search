@@ -3,6 +3,7 @@ const APIURL = 'https://api.github.com/users/';
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
+const switchContainer = document.getElementById('theme-switch-container');
 const sun = document.querySelector('.fa-sun');
 const moon = document.querySelector('.fa-moon');
 const themeText = document.getElementById('theme-select');
@@ -31,10 +32,10 @@ function switchTheme() {
 function updateTheme() {
   if (body.classList.contains('dark')){
     themeText.innerHTML = 'Dark';
-    sun.classList.add('hidden');
+    moon.classList.add('hidden');
     localStorage.setItem('theme', 'dark'); 
   }else {
-    moon.classList.add('hidden');
+    sun.classList.add('hidden');
     themeText.innerHTML = 'Light';
     localStorage.setItem('theme', 'light');
   }
@@ -78,10 +79,7 @@ form.addEventListener("submit", (e) => {
 })
 
 // find browser specific color theme
-sun.addEventListener('click', () => {
+switchContainer.addEventListener('click', () => {
   updateTheme();
 });
 
-moon.addEventListener('click', () => {
-  updateTheme();
-});
