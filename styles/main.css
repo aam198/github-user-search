@@ -85,6 +85,10 @@ body.dark{
   color: hsla(var(--txt-white));
 }
 
+.fas.hidden {
+  display: none;
+}
+
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
   font-family: var(--font-main);
@@ -118,19 +122,19 @@ header h1{
   font-size: 2.441rem;
 }
 
-small{
+header span{
   font-size: 0.8rem;
   text-transform: uppercase;
 }
 
-small i.fas {
+header i.fas {
   margin-left: 0.5rem;
   font-size: 0.9rem;
   color: var(--theme-switch-btn);
   cursor:pointer;
 }
 
-small i.fas:hover{
+header i.fas:hover{
   color: var(--theme-switch-btn-hover);
 }
 
