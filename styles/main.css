@@ -29,8 +29,9 @@
    --txt-search: #222731;
    --txt-search-placeholder: #4b6a9b;
 
-   --box-shadow: 0deg 0% 85%;
- 
+   --box-shadow: 0deg 0% 77%;
+  
+   --box: hsl(225deg 100% 94.3% /0.4);
    --bg: #f6f8ff;
    --bg-secondary: #fefefe;
 
@@ -55,10 +56,11 @@ body.dark {
   --txt-button: 0deg 0% 100%;
 
   --txt-gray: hsl(var(--txt-white) / 0.55);
-
+  --box: #141d2f;
   --bg: #141d2f;
   --bg-secondary: #1e2a47;
 
+  
   --box-shadow: 220deg 30% 8%;
 
   --theme-switch-btn: #ffffff;
@@ -279,7 +281,8 @@ header i.fas:hover{
 .user-followers{
   color: var(--txt-white);
   margin: 1rem 0;
-  background-color: var(--bg);
+  background-color: var(--box);
+  box-shadow: 1px 2px 2px hsl(var(--box-shadow));
   height: 5rem;
   padding: 0.5rem 2.5rem;
   border-radius: 12px;
@@ -333,7 +336,8 @@ header i.fas:hover{
 .repo {
   text-decoration: none;
   color: hsl(var(--txt-white));
-  background-color: var(--bg);
+  background-color: var(--box);
+  box-shadow: 1px 1px 1px hsl(var(--box-shadow));
   font-size: 0.7rem;
   padding: 0.25rem 0.5rem;
   margin-right: 0.5rem;
