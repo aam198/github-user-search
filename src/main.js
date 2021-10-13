@@ -41,6 +41,12 @@ async function getRepos(username){
 }
 
 function createUserCard(user){
+  const joinedAt = user.created_at.split('T')[0];
+  const parsedJoined = joinedAt.split('-');
+  const year = parsedJoined[0];
+  const month = parsedJoined[1];
+
+  console.log(month);
 
   const cardHTML = ` 
   <div class="card">
