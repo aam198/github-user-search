@@ -10,18 +10,114 @@ const themeText = document.getElementById('theme-select');
 const body = document.body;
 
 
-// Function To GET username
+// Function To GET username and response with data
 
 async function getUser(username){
   try{
     const { data } = await axios(APIURL + username);
 
-    console.log(data)
+    console.log(data);
+    createUserCard(data);
+    getRepos(username);
   }
   catch(err){
-    console.log(err);
+    if(err.response.status === 404){
+     createErrorCard('No profile with that username');
+    }
   }
 }
+
+// another call to get top 5 recent repos to add to card
+async function getRepos(username){
+  try{
+    const { data } = await axios(APIURL + username + '/repos?sort=created');
+
+    console.log(data);
+    addReposToCard(data);
+  }
+  catch(err){
+      createErrorCard('No repos');
+  }
+}
+
+function createUserCard(user){
+
+  const cardHTML = ` 
+  <div class="card">
+    <div class="card-main">
+      <img src="${user.avatar_url}" alt="Github user profile" class="avatar">
+
+      <div class="user-following"> 
+        <div class="user-name">
+          <h2>${user.name}</h2>
+          <p class="join-date">Joined ${user.created_at}</p>
+      </div>
+
+      <div class="user-info">
+       <small class="handle">@${user.login}</small>
+        <p class="bio">${user.bio}</p>
+        
+        <ul class="user-followers">
+          <li><small>Repos</small><br> ${user.public_repos}</li>
+          <li><small>Followers</small><br>${user.followers} </li>
+          <li><small>Following</small><br>${user.following}</li>
+        </ul>
+
+        <div class="user-info-extra">
+          <div class="row">
+            <div id="location" class="location"><i class="fas fa-map-marker-alt"></i> ${user.location}</div>
+            <div id="link"><i class="fas fa-link"></i>${user.html_url}</div>
+        </div>
+
+        <div class="row-2">
+          <div id="twitter"> <i class="fab fa-twitter"></i> ${user.twitter_username}</div>
+          <div id="work"><i class="fas fa-city"></i> @${user.company}</div>
+        </div>  
+      </div> 
+
+        <div id="repos">
+          
+        </div>
+
+      </div>
+    </div>  
+  </div>`
+
+    main.innerHTML = cardHTML;
+}
+
+// Function to add repos to card
+
+function addReposToCard(repos) {
+  const reposEl = document.getElementById('repos');
+
+  repos
+  
+  .slice(0, 10)
+  .forEach(repo => {
+    const repoLink = document.createElement('a');
+    repoLink.classList.add('repo');
+    repoLink.href = repo.html_url;
+    repoLink.target = '_blank';
+    repoLink.innerText = repo.name;
+
+    reposEl.appendChild(repoLink);
+  })
+}
+
+// Error Handling for No profile found
+
+function createErrorCard(msg) {
+  const cardHTML = `
+   <div class="card error">
+      <h1>${msg}</h1>
+  </div>
+  `
+  main.innerHTML = cardHTML;
+}
+
+
+// Theme Switch/Storage Section
 
 function switchTheme() {
   sun.classList.toggle('hidden');
@@ -67,6 +163,7 @@ initTheme();
 
 
 // Event Listeners
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 

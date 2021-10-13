@@ -203,11 +203,16 @@ header i.fas:hover{
   border-radius: 12px;
   font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 4px 8px hsl(var(--box-shadow)), 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px hsl(var(--box-shadow)), 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 200ms ease-in;
 }
 
 .user-form button:hover{
   background-color: var(--primary-hover);
+}
+
+.user-form button:active{
+  box-shadow: 0px 2px 2px hsl(var(--box-shadow));
 }
 
 
@@ -215,7 +220,8 @@ header i.fas:hover{
 
 
  .card{
-  max-width: 80rem;
+  min-width: 50rem;
+  max-width: 50rem;
   background-color: var(--bg-secondary);
   margin-top: 1rem;
   border-radius: 20px;
@@ -257,6 +263,7 @@ header i.fas:hover{
 }
 
 .join-date{
+  margin-left: 1rem;
   color: hsl(var(--txt-white) / 0.55);
   font-family: var(--font-search);
 }
@@ -348,15 +355,23 @@ header i.fas:hover{
 
 /* Mobile */
 
+@media (max-width: 770px){
+  .card{
+    min-width: 20rem;
+  }
+}
+
 @media (max-width: 500px){
   header{
     max-width: 400px;
   }
   .user-form{
     max-width: 400px;
+    margin: 0px 1rem;
   }
   .card{
     padding: 1rem;
+    margin: 1rem;
   }
   .card-main{
     align-items: center;
