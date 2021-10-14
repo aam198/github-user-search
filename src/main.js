@@ -41,12 +41,19 @@ async function getRepos(username){
 }
 
 function createUserCard(user){
+  // Date format
   const joinedAt = user.created_at.split('T')[0];
   const parsedJoined = joinedAt.split('-');
   const year = parsedJoined[0];
   const month = parsedJoined[1];
 
-  console.log(month);
+  const date = new Date(year, month);
+  date.setMonth(month - 1);
+  const monthTxt = date.toLocaleString('default', {month: 'short'});
+
+  console.log(monthTxt, year);
+
+
 
   const cardHTML = ` 
   <div class="card">
@@ -56,7 +63,7 @@ function createUserCard(user){
       <div class="user-following"> 
         <div class="user-name">
           <h2>${user.name}</h2>
-          <p class="join-date">Joined ${user.created_at}</p>
+          <p class="join-date">Joined ${monthTxt} ${year}</p>
       </div>
 
       <div class="user-info">

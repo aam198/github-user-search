@@ -225,7 +225,11 @@ header i.fas:hover{
   background-color: var(--bg-secondary);
   margin-top: 1rem;
   border-radius: 20px;
-  box-shadow: 0 4px 8px hsl(var(--box-shadow)), 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow:
+  4.3px 2.9px 5.3px rgba(0, 0, 0, 0.09),
+  14.3px 9.6px 17.9px rgba(0, 0, 0, 0.054),
+  64px 43px 80px rgba(0, 0, 0, 0.036)
+;
   display: flex;
   flex-direction: column;
   padding: 2.2rem;
@@ -243,7 +247,6 @@ header i.fas:hover{
 
 .avatar{
   border-radius: 50%;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
   height: 150px;
   width: 150px;
 }
