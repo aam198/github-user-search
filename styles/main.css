@@ -255,7 +255,7 @@ header i.fas:hover{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-item: center;
+  align-items: center;
   margin-left: 2rem;
 }
 
@@ -359,28 +359,41 @@ header i.fas:hover{
 /* Mobile */
 
 @media (max-width: 770px){
+  body, body.dark{
+   height: auto;
+   overflow: visible;
+  }
   .card{
     min-width: 20rem;
   }
 }
 
 @media (max-width: 500px){
+ 
+
   header{
     max-width: 400px;
+    margin-top: 100px;
   }
   .user-form{
     max-width: 400px;
     margin: 0px 1rem;
   }
   .card{
-    padding: 1rem;
+    padding: 1.5rem;
     margin: 1rem;
   }
   .card-main{
     align-items: center;
-  }
-  .card-main{
     flex-direction: column;
+  }
+
+  .user-following{
+    margin-top: 1rem;
+  }
+
+  .user-name, .user-info{
+    margin-left: 0;
   }
 
   .row{
