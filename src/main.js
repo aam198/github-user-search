@@ -10,6 +10,7 @@ const themeText = document.getElementById('theme-select');
 const body = document.body;
 
 
+
 // Function To GET username and response with data
 
 async function getUser(username){
@@ -41,6 +42,46 @@ async function getRepos(username){
 }
 
 function createUserCard(user){
+
+
+  //Validation that information is provided.
+
+  if (!user.bio || user.bio.length < 1){
+    user.bio = 'This profile does not currently have a Github Bio filled out.';
+  }
+  else {
+     user.bio;
+  }
+
+  if (!user.location || user.location.length < 1){
+    user.location = 'n/a';
+  }
+  else {
+     user.location;
+  }
+
+  if (!user.html_url || user.html_url.length < 1){
+    user.html_url = 'n/a';
+  }
+  else {
+     user.html_url;
+  }
+
+  if (!user.twitter_username || user.twitter_username.length < 1){
+    user.twitter_username = 'n/a';
+  }
+  else {
+     user.twitter_username;
+  }
+  
+  if (!user.company || user.company.length < 1){
+    user.company = 'n/a';
+  }
+  else {
+     user.company;
+  }
+
+
   // Date format
   const joinedAt = user.created_at.split('T')[0];
   const parsedJoined = joinedAt.split('-');
@@ -52,7 +93,6 @@ function createUserCard(user){
   const monthTxt = date.toLocaleString('default', {month: 'short'});
 
   console.log(monthTxt, year);
-
 
 
   const cardHTML = ` 
