@@ -355,6 +355,12 @@ header i.fas:hover{
   display: inline-block;
 }
 
+/* Error Card */
+
+.error {
+  border: 1px dashed var(--error);
+  color: var(--error);
+}
 
 /* Mobile */
 

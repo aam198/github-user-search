@@ -41,8 +41,8 @@ async function getRepos(username){
   }
 }
 
-function createUserCard(user){
 
+function createUserCard(user){
 
   //Validation that information is provided.
 
@@ -163,7 +163,7 @@ function addReposToCard(repos) {
 function createErrorCard(msg) {
   const cardHTML = `
    <div class="card error">
-      <h1>${msg}</h1>
+      <h3>${msg}, please try again.</h3>
   </div>
   `
   main.innerHTML = cardHTML;
