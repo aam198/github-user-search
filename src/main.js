@@ -94,7 +94,8 @@ function createUserCard(user){
 
   console.log(monthTxt, year);
 
-
+  //Build actual user card with data from api
+  
   const cardHTML = ` 
   <div class="card">
     <div class="card-main">
